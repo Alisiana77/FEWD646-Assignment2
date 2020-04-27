@@ -1,0 +1,30 @@
+
+
+
+
+#sticker {
+    background: silver;
+    color: white;
+    width: 250px;
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 1em;   
+    text-align: left;
+    padding: 20px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.2);
+    text-decoration: none;
+    border-radius: 5px;
+    float:right;
+  }
+
+  #toTop {
+    padding: 5px 3px;
+    background: #000;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    right: 5px;
+    display: none;
+}
+
+ #footer    {width:100%;height:70px;background: lightgrey;text-align:center;color: black;padding-top:50px; clear: both;}
