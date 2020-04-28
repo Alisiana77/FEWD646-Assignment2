@@ -9,37 +9,56 @@
 	<link rel="stylesheet" href="css/layout.css">
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/scrollToTop.css">
+	<link rel="stylesheet" href="css/easing.css">
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-	<script src="jquery.sticky.js"></script>
+	<script type="text/javascript" src="js/jquery.sticky.js"></script>
 	<script src="js/jquery.mobilemenu.js"></script>
 	<script>
 		$(document).ready(function(){
 			$('#responsive-menu').mobileMenu();
 			$(document).tooltip();
-			$("#sticker").sticky({topSpacing: 50});
+			$("#sticker").sticky({topSpacing: 0});
+
+			$('body').scrollToTop({
+				distance: 200,
+				speed: 1000,
+				easing: 'linear',
+				animation: 'fade', // fade, slide, none
+				animationSpeed: 500,
+
+				mobile: {
+					width: 768,
+					distance: 100,
+					speed: 1000,
+					easing: 'easeInOutElastic',
+					animation: 'slide',
+					animationSpeed: 200
+				},
+
+				trigger: null, // Set a custom triggering element. Can be an HTML string or jQuery object
+				target: null, // Set a custom target element for scrolling to. Can be element or number
+				text: 'Scroll To Top', // Text for element, can contain HTML
+
+				skin: null,
+				throttle: 250,
+
+				namespace: 'scrollToTop'
+			});
+
+
+
 		});
 
-		$(window).scroll(function() {
-			if ($(this).scrollTop()) {
-				$('#toTop').fadeIn();
-			} else {
-				$('#toTop').fadeOut();
-			}
-		});
-
-		$("#toTop").click(function () {
-		//1 second of animation time
-		//html works for FFX but not Chrome
-		//body works for Chrome but not FFX
-		//This strange selector seems to work universally
-		$("html, body").animate({scrollTop: 0}, 1000);
-		});
+		
+	
 	</script>
 </head>
 <body>
@@ -191,16 +210,13 @@
 			  </div>
 			</section>
 
-			<!-- INSERT ACCORDION HERE -->
-
-			<div id='toTop'>To The Top!</div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
-
 		</section>
 
 		<footer id="footer">
 			Copyright &copy; 2014 | Vecta Corp.<br>			
 		</footer>	
 	</main>
+	<script src="js/jquery-scrollToTop.js"></script>
+
 </body>
 </html>
